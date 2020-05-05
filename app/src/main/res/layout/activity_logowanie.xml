@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".logowanie">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFF8CD"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_height="281dp"
+            android:background="#FFF8CD"
+            android:contentDescription="@string/desc"
+            app:srcCompat="@mipmap/twicelayout" />
+
+        <EditText
+            android:id="@+id/logemail"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:autofillHints="Login lub e-mail"
+            android:ems="10"
+            android:hint="@string/logemail"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textColor="#E91E63"
+            android:textColorHint="#E681A3" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:ems="10"
+            android:hint="@string/password"
+            android:autofillHints="Hasło"
+            android:inputType="textPassword"
+            android:padding="20dp"
+            android:textColor="#E91E63"
+            android:textColorHint="#E681A3" />
+
+        <CheckBox
+            android:id="@+id/zapam_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="@string/zapam_checkbox"
+            android:textColor="#73727A" />
+
+        <Button
+            android:id="@+id/zalog_BUTTON"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="@string/zalog_BUTTON" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

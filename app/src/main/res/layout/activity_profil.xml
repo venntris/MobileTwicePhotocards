@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF8CD"
+    tools:context=".profil">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="264dp"
+            android:contentDescription="@string/desc"
+            app:srcCompat="@mipmap/twicelayout" />
+
+        <EditText
+            android:id="@+id/login2"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:autofillHints="Login"
+            android:ems="10"
+            android:hint="@string/login"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textColor="#E91E63"
+            android:textColorHint="#E681A3" />
+
+        <EditText
+            android:id="@+id/email2"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:autofillHints="E-mail"
+            android:ems="10"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textColor="#E91E63"
+            android:textColorHint="#E681A3" />
+
+        <EditText
+            android:id="@+id/password3"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:autofillHints="Hasło"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:padding="20dp"
+            android:textColor="#E91E63"
+            android:textColorHint="#E681A3" />
+
+        <Button
+            android:id="@+id/potwierdz_BUTTON"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="@string/potwierdz_BUTTON" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

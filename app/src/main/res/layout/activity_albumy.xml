@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".albumy">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFF8CD"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="266dp"
+            android:contentDescription="@string/desc"
+            app:srcCompat="@mipmap/twicelayout" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+                <Button
+                    android:id="@+id/thestorybegins"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:text="@string/thestorybegins" />
+
+                <Button
+                    android:id="@+id/pagetwo"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:text="@string/pagetwo" />
+
+                <Button
+                    android:id="@+id/tclane1"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:text="@string/tclane1" />
+
+                <Button
+                    android:id="@+id/tclane2"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:text="@string/tclane2" />
+
+                <Button
+                    android:id="@+id/signal"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:text="@string/signal" />
+
+                <Button
+                    android:id="@+id/twicetagram"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:text="@string/twicetagram" />
+
+                <Button
+                    android:id="@+id/merryhappy"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:text="@string/merryhappy" />
+
+                <Button
+                    android:id="@+id/whatislove"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:text="@string/whatislove" />
+
+                <Button
+                    android:id="@+id/summernights"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:text="@string/summernights" />
+
+                <Button
+                    android:id="@+id/yesoryes"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:text="@string/yesoryes" />
+
+                <Button
+                    android:id="@+id/theyearofyes"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:text="@string/theyearofyes" />
+
+                <Button
+                    android:id="@+id/fancy"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:text="@string/fancy" />
+
+                <Button
+                    android:id="@+id/feelspecial"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:text="@string/feelspecial" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">TwicePhotocards</string>
+    <string name="desc">header</string>
+
+    <string name="zalogowany">Po zalogowaniu</string>
+
+    // Główna
+    <string name="log_BUTTON">Zaloguj się!</string>
+    <string name="rej_BUTTON">Zarejestruj się!</string>
+
+    // Logowanie
+    <string name="zalog_BUTTON">Zaloguj się</string>
+    <string name="logemail">Login lub e-mail</string>
+    <string name="password">Hasło</string>
+    <string name="zapam_checkbox">Zapamiętaj mnie</string>
+
+    // Rejestracja
+    <string name="zarej_BUTTON">Zarejestruj się</string>
+    <string name="password2">Powtórz hasło</string>
+    <string name="email">E-mail</string>
+    <string name="login">Login</string>
+    <string name="switch1">Akceptuję regulamin</string>
+
+    // Profil karty
+    <string name="dodaj_BUTTON">Dodaj kartę</string>
+    <string name="wymiana_BUTTON">Wymień kartę</string>
+    <string name="sprzedaz_BUTTON">Sprzedaj kartę</string>
+
+    <string name="idcard">ID: </string>
+    <string name="idol">Członkini: </string>
+    <string name="album">Album: </string>
+    <string name="pricecard">Wartość: </string>
+    <string name="card">Karta</string>
+
+    // Konto
+    <string name="profile_BUTTON">Mój profil</string>
+    <string name="allcards_BUTTON">Wszystkie karty</string>
+    <string name="mycards_BUTTON">Moje karty</string>
+    <string name="trading_BUTTON">Wymiana</string>
+    <string name="selling_BUTTON">Sprzedaż</string>
+
+    // Mój profil
+    <string name="potwierdz_BUTTON">Zatwierdź</string>
+
+    // Wszystkie
+    <string name="nayeon_BUTTON">Nayeon</string>
+    <string name="jeongyeon_BUTTON">Jeongyeon</string>
+    <string name="momo_BUTTON">Momo</string>
+    <string name="sana_BUTTON">Sana</string>
+    <string name="jihyo_BUTTON">Jihyo</string>
+    <string name="mina_BUTTON">Mina</string>
+    <string name="dahyun_BUTTON">Dahyun</string>
+    <string name="chaeyoung_BUTTON">Chaeyoung</string>
+    <string name="tzuyu_BUTTON">Tzuyu</string>
+
+    // Albumy
+    <string name="thestorybegins">The story begins</string>
+    <string name="pagetwo">Page two</string>
+    <string name="tclane1">Twicecoaster: Lane 1</string>
+    <string name="tclane2">Twicecoaster: Lane 2</string>
+    <string name="signal">Signal</string>
+    <string name="twicetagram">Twicetagram</string>
+    <string name="merryhappy">Merry and Happy</string>
+    <string name="whatislove">What is love?</string>
+    <string name="summernights">Summer Nights</string>
+    <string name="yesoryes">Yes or Yes</string>
+    <string name="theyearofyes">The year of yes</string>
+    <string name="fancy">Fancy</string>
+    <string name="feelspecial">Feel Special</string>
+</resources>

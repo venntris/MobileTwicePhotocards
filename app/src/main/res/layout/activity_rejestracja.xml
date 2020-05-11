@@ -50,7 +50,7 @@
             android:textColorHint="#E681A3" />
 
         <EditText
-            android:id="@+id/password"
+            android:id="@+id/TextView_password"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:autofillHints="Hasło"

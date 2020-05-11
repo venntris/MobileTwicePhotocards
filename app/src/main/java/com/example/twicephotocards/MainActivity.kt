@@ -1,8 +1,15 @@
 package com.example.twicephotocards
 
+import android.content.Context
 import android.content.Intent
+import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.RelativeLayout
+import android.widget.Toast
+import com.example.twicephotocards.ApiAuthenticationClient
+import kotlinx.android.synthetic.main.activity_logowanie.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -11,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        log_BUTTON.setOnClickListener {
+        main_login_BUTTON.setOnClickListener {
 
             var nowaAktywnosc: Intent = Intent(applicationContext, logowanie::class.java)
             startActivity(nowaAktywnosc)
@@ -31,6 +38,5 @@ class MainActivity : AppCompatActivity() {
             startActivity(nowaAktywnosc3)
 
         }
-
     }
 }

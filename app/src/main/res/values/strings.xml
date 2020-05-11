@@ -13,6 +13,7 @@
     <string name="logemail">Login lub e-mail</string>
     <string name="password">Hasło</string>
     <string name="zapam_checkbox">Zapamiętaj mnie</string>
+    <string name="button_end_main">Wyjdź</string>
 
     // Rejestracja
     <string name="zarej_BUTTON">Zarejestruj się</string>

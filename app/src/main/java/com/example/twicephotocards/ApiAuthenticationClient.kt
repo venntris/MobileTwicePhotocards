@@ -29,7 +29,7 @@ class ApiAuthenticationClient(
     private var headerFields: MutableMap<String, List<String>>
     fun setBaseUrl(baseUrl: String): ApiAuthenticationClient {
         this.baseUrl = baseUrl
-        if (baseUrl.substring(baseUrl.length - 1) != "/") {
+        if (!baseUrl.substring(baseUrl.length - 1).equals("/")) {
             this.baseUrl += "/"
         }
         return this

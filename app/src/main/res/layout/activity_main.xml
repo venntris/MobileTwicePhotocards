@@ -40,12 +40,5 @@
             android:height="70dp"
             android:text="@string/rej_BUTTON" />
 
-        <Button
-            android:id="@+id/zalogowany"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/zalogowany" />
-
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

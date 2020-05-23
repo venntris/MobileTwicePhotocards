@@ -8,7 +8,6 @@ import android.os.Bundle
 import android.support.constraint.ConstraintLayout
 import android.view.View
 import android.widget.Toast
-import com.example.twicephotocards.ApiAuthenticationClient
 import kotlinx.android.synthetic.main.activity_logowanie.*
 
 class logowanie : AppCompatActivity() {
@@ -29,7 +28,7 @@ class logowanie : AppCompatActivity() {
                 override fun onClick(v: View?) {
                     try {
                         username = TextView_login.text.toString()
-                        password = TextView_password.text.toString()
+                        password = TextView_password2.text.toString()
 
                         val api: ApiAuthenticationClient =
                             ApiAuthenticationClient(baseUrl, username, password)
@@ -105,7 +104,7 @@ class logowanie : AppCompatActivity() {
             val intent = Intent(this@logowanie, konto::class.java)
             startActivity(intent)
             TextView_login.setText("")
-            TextView_password.setText("")
+            TextView_password2.setText("")
         }
 
     }

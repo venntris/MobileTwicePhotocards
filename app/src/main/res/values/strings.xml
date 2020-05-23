@@ -17,7 +17,8 @@
 
     // Rejestracja
     <string name="zarej_BUTTON">Zarejestruj się</string>
-    <string name="password2">Powtórz hasło</string>
+    <string name="c_password">Powtórz hasło</string>
+    <string name="regpassword">Podaj hasło</string>
     <string name="email">E-mail</string>
     <string name="login">Login</string>
     <string name="switch1">Akceptuję regulamin</string>

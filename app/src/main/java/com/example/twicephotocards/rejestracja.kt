@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Message
 import android.support.constraint.ConstraintLayout
 import android.view.View
 import android.widget.Toast
@@ -20,6 +21,8 @@ class rejestracja : AppCompatActivity() {
     private lateinit var password: String
     private lateinit var c_password: String
     private lateinit var apiToken: String
+    private var policyAccepted: Boolean = false
+    private lateinit var error: errorMenager
     private val apiTokenPreferenceString: String = "apiToken"
 
 
@@ -28,6 +31,8 @@ class rejestracja : AppCompatActivity() {
         setContentView(R.layout.activity_rejestracja)
         baseUrl = "http://ct.zobacztu.pl/"
 
+        error = errorMenager(applicationContext, "", Toast.LENGTH_LONG)
+
         zarej_BUTTON.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 try {
@@ -35,6 +40,18 @@ class rejestracja : AppCompatActivity() {
                     email = TextView_email.text.toString()
                     password = regpassword.text.toString()
                     c_password = TextView_c_password.text.toString()
+
+                    policyAccepted = switch_BUTTON.isChecked
+                    if (!policyAccepted){
+                        error.setMessage("Zaakceptuj regulamin!").show()
+                        return
+                    }
+
+                    val isPasswordsEquals: Boolean = password.equals(c_password)
+                        if (!isPasswordsEquals){
+                            error.setMessage("Hasła nie są jednakowe!").show()
+                            return
+                        }
 
                     val api: ApiAuthenticationClient =
                         ApiAuthenticationClient(baseUrl, username, password)
@@ -69,7 +86,8 @@ class rejestracja : AppCompatActivity() {
     public class ExecuteNetworkOperation(
         private var api: ApiAuthenticationClient,
         private var applicationContext: Context,
-        private var activity: rejestracja
+        private var activity: rejestracja,
+        private var error: errorMenager = errorMenager(applicationContext, "", Toast.LENGTH_LONG)
     ) : AsyncTask<Void, Void, String>() {
         private lateinit var isValidCredentials: String
 
@@ -95,9 +113,11 @@ class rejestracja : AppCompatActivity() {
             if (!prefs.apiToken.isNullOrEmpty()) {
                 activity.goToLoginPage();
             } else {
-                Toast.makeText(applicationContext, "Rejestracja nieudane", Toast.LENGTH_LONG).show()
+                error.setMessage("Rejestracja nieudana!").show()
             }
+
         }
+
     }
 
     public fun goToLoginPage() {
@@ -114,7 +134,6 @@ class rejestracja : AppCompatActivity() {
         TextView_c_password.setText("")
         TextView_email.setText("")
     }
-
 }
 
 

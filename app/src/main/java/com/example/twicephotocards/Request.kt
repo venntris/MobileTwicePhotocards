@@ -8,7 +8,7 @@ import java.net.URLEncoder
 import javax.net.ssl.HttpsURLConnection
 
 class Request {
-    fun requestPOST(r_url: String?, postDataParams: JSONObject): String? {
+    fun requestPOST(r_url: String?, postDataParams: JSONObject, authorizationToken: String = ""): String? {
         val url = URL(r_url)
         val conn: HttpURLConnection = url.openConnection() as HttpURLConnection
         conn.readTimeout = 3000
@@ -16,6 +16,7 @@ class Request {
         conn.requestMethod = "POST"
         conn.doInput = true
         conn.doOutput = true
+        conn.addRequestProperty("Authorization", "Bearer "+ authorizationToken)
         val os: OutputStream = conn.outputStream
         val writer = BufferedWriter(OutputStreamWriter(os, "UTF-8"))
         writer.write(encodeParams(postDataParams))

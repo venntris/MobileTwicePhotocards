@@ -35,6 +35,8 @@ class ApiAuthenticationClient(
         return this
     }
 
+
+
     fun setUrlResource(urlResource: String): ApiAuthenticationClient {
         var urlResource = urlResource
         if (urlResource.substring(0, 1) == "/") urlResource = urlResource.substring(1)
@@ -145,10 +147,20 @@ class ApiAuthenticationClient(
     fun execute(): String {
         val request = Request()
         lastResponse = request.requestPOST(baseUrl + urlResource, payloadAsJson)
-        val apiRespJson = JSONObject(lastResponse)
+        val apiRespJson = JSONObject(lastResponse.toString())
         val successArray = apiRespJson["success"] as JSONObject
         apiToken = successArray.getString("token")
         return apiToken
+    }
+
+    @Throws(JSONException::class)
+    fun executeAndGetJSON(): JSONObject {
+        val request = Request()
+        val token: String = prefs.apiToken.toString()
+        lastResponse = request.requestPOST(baseUrl + urlResource, payloadAsJson, token)
+        val apiRespJson = JSONObject(lastResponse.toString())
+        val successArray = apiRespJson["success"] as JSONObject
+        return successArray
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)

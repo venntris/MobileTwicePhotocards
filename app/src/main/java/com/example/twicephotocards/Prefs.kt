@@ -13,6 +13,7 @@ class Prefs (context: Context) {
     val EMAIL = "email"
     val BASEURL = "baseUrl"
     val EMPTY_STRING = ""
+    val ID_value = "ID"
     val prefs: SharedPreferences = context.getSharedPreferences(PREFS_FILENAME, 0)
 
     var apiToken: String?
@@ -38,4 +39,8 @@ class Prefs (context: Context) {
     var email: String?
         get() = prefs.getString(EMAIL, EMPTY_STRING)
         set(value) = prefs.edit().putString(EMAIL, value).apply()
+
+    var ID: String?
+        get() = prefs.getString(ID_value, EMPTY_STRING)
+        set(value) = prefs.edit().putString(ID_value, value).apply()
 }

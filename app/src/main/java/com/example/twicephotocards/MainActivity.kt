@@ -32,11 +32,5 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        zalogowany.setOnClickListener {
-
-            var nowaAktywnosc3: Intent = Intent(applicationContext, konto::class.java)
-            startActivity(nowaAktywnosc3)
-
-        }
     }
 }

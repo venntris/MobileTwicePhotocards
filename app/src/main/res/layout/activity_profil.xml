@@ -20,43 +20,73 @@
             android:contentDescription="@string/desc"
             app:srcCompat="@mipmap/twicelayout" />
 
-        <EditText
-            android:id="@+id/login2"
+        <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:autofillHints="Login"
-            android:ems="10"
-            android:hint="@string/login"
-            android:inputType="textPersonName"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:textColor="#E91E63"
-            android:textColorHint="#E681A3" />
+            android:layout_height="156dp">
 
-        <EditText
-            android:id="@+id/email2"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:autofillHints="E-mail"
-            android:ems="10"
-            android:hint="@string/email"
-            android:inputType="textEmailAddress"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:textColor="#E91E63"
-            android:textColorHint="#E681A3" />
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="20dp">
 
-        <EditText
-            android:id="@+id/password3"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:autofillHints="Hasło"
-            android:ems="10"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:padding="20dp"
-            android:textColor="#E91E63"
-            android:textColorHint="#E681A3" />
+                <TextView
+                    android:id="@+id/UserID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="ID:" />
+
+                <EditText
+                    android:id="@+id/ID_value"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/nazwa"
+                    android:layout_width="111dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:text="Nazwa:" />
+
+                <EditText
+                    android:id="@+id/name_value"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:text="E-mail:" />
+
+                <EditText
+                    android:id="@+id/email_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </TableLayout>
 
         <Button
             android:id="@+id/potwierdz_BUTTON"

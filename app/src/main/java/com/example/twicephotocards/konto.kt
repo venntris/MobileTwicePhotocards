@@ -1,10 +1,10 @@
 package com.example.twicephotocards
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+//import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_konto.*
-import kotlinx.android.synthetic.main.activity_main.*
 
 class konto : AppCompatActivity() {
 
@@ -14,15 +14,15 @@ class konto : AppCompatActivity() {
 
         profile_BUTTON.setOnClickListener {
 
-            var nowaAktywnosc1b: Intent = Intent(applicationContext, profil::class.java)
-            startActivity(nowaAktywnosc1b)
+            var profileActivity: Intent = Intent(applicationContext, profil::class.java)
+            startActivity(profileActivity)
 
         }
 
         allcards_BUTTON.setOnClickListener {
 
-            var nowaAktywnosc2b: Intent = Intent(applicationContext, wszystkie::class.java)
-            startActivity(nowaAktywnosc2b)
+            var allCardsActivity: Intent = Intent(applicationContext, Wszystkie::class.java)
+            startActivity(allCardsActivity)
 
         }
 

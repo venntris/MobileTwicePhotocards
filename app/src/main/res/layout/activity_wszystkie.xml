@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".wszystkie">
+    tools:context=".Wszystkie">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,73 +27,13 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:orientation="vertical"
+                android:id="@id/catContainer">
 
-                <Button
-                    android:id="@+id/nayeon_BUTTON"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:text="@string/nayeon_BUTTON" />
 
-                <Button
-                    android:id="@+id/jeongyeon_BUTTON"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:text="@string/jeongyeon_BUTTON" />
-
-                <Button
-                    android:id="@+id/momo_BUTTON"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:text="@string/momo_BUTTON" />
-
-                <Button
-                    android:id="@+id/sana_BUTTON"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:text="@string/sana_BUTTON" />
-
-                <Button
-                    android:id="@+id/jihyo_BUTTON"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:text="@string/jihyo_BUTTON" />
-
-                <Button
-                    android:id="@+id/mina_BUTTON"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:text="@string/mina_BUTTON" />
-
-                <Button
-                    android:id="@+id/dahyun_BUTTON"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:text="@string/dahyun_BUTTON" />
-
-                <Button
-                    android:id="@+id/chaeyoung_BUTTON"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:text="@string/chaeyoung_BUTTON" />
-
-                <Button
-                    android:id="@+id/tzuyu_BUTTON"
-                    style="@style/Widget.AppCompat.Button.Colored"
-                    android:layout_width="match_parent"
-                    android:layout_height="70dp"
-                    android:text="@string/tzuyu_BUTTON" />
             </LinearLayout>
         </ScrollView>
 
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,14 +3,11 @@ package com.example.twicephotocards
 import android.content.Context
 import android.content.Intent
 import android.os.AsyncTask
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Message
-import android.support.constraint.ConstraintLayout
+//import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_logowanie.*
-import kotlinx.android.synthetic.main.activity_logowanie.TextView_password2
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_rejestracja.*
 
 class rejestracja : AppCompatActivity() {
@@ -127,7 +124,7 @@ class rejestracja : AppCompatActivity() {
         prefs.email = email
         prefs.baseUrl = baseUrl
 
-        val intent = Intent(this@rejestracja, logowanie::class.java)
+        val intent = Intent(this@rejestracja, Logowanie::class.java)
         startActivity(intent)
         TextView_login2.setText("")
         regpassword.setText("")

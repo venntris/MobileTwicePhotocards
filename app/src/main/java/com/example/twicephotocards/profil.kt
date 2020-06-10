@@ -2,11 +2,12 @@ package com.example.twicephotocards
 
 import android.content.Context
 import android.os.AsyncTask
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+//import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-import org.json.JSONObject
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_profil.*
+import org.json.JSONObject
 
 class profil : AppCompatActivity() {
 

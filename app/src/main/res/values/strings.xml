@@ -33,6 +33,7 @@
     <string name="album">Album: </string>
     <string name="pricecard">Wartość: </string>
     <string name="card">Karta</string>
+    <string name="qty">Ilość:</string>
 
     // Konto
     <string name="profile_BUTTON">Mój profil</string>

@@ -1,20 +1,17 @@
 package com.example.twicephotocards
 
-import android.os.Build
-import android.support.annotation.RequiresApi
 import org.json.JSONException
 import org.json.JSONObject
-import java.io.*
-import java.net.HttpURLConnection
-import java.net.URL
+import java.io.UnsupportedEncodingException
 import java.net.URLEncoder
 import java.util.*
 
 class ApiAuthenticationClient(
     baseUrl: String,
-    username: String,
+    login: String,
     password: String
 ) {
+    public  val DATA_ARRAY: String = "data"
     private var apiToken = ""
     private var baseUrl: String? = null
     private var username: String
@@ -144,103 +141,43 @@ class ApiAuthenticationClient(
         }
 
     @Throws(JSONException::class)
+    fun executeAndGetToken(): String{
+        val api = ApiCommunicator(baseUrl as String)
+        setForLogin(api)
+        return api.executeAndGetToken()
+    }
+
+    fun setForLogin(apiCommunicator: ApiCommunicator){
+        apiCommunicator.setUrlResource(urlResource)
+        apiCommunicator.setHttpMethod("POST")
+        apiCommunicator.setParameter("email", username)
+        apiCommunicator.setParameter("password", password)
+    }
+
+    @Throws(JSONException::class)
     fun execute(): String {
-        val request = Request()
-        lastResponse = request.requestPOST(baseUrl + urlResource, payloadAsJson)
+        val request = Request(baseUrl + urlResource, payloadAsJson,"POST")
+        lastResponse = request.request()
         val apiRespJson = JSONObject(lastResponse.toString())
-        val successArray = apiRespJson["success"] as JSONObject
+        val successArray = apiRespJson[DATA_ARRAY] as JSONObject
         apiToken = successArray.getString("token")
         return apiToken
     }
 
     @Throws(JSONException::class)
     fun executeAndGetJSON(): JSONObject {
-        val request = Request()
         val token: String = prefs.apiToken.toString()
-        lastResponse = request.requestPOST(baseUrl + urlResource, payloadAsJson, token)
+        val request = Request(baseUrl + urlResource, payloadAsJson, token)
+        lastResponse = request.requestPOST()
         val apiRespJson = JSONObject(lastResponse.toString())
-        val successArray = apiRespJson["success"] as JSONObject
+        val successArray = apiRespJson[DATA_ARRAY] as JSONObject
         return successArray
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    fun execute2(): String {
-        var line: String?
-        val outputStringBuilder = StringBuilder()
-        try {
-            val urlString = StringBuilder(baseUrl + urlResource)
-            if (urlPath != "") {
-                urlString.append(urlPath)
-            }
-            if (parameters.size > 0 && httpMethod == "GET") {
-                payload = payloadAsString
-                urlString.append("?").append(payload)
-            }
-            val url = URL(urlString.toString())
-            //String encoding = Base64.encode((username+":"+password).getBytes(), 0).toString();
-            val connection =
-                url.openConnection() as HttpURLConnection
-            connection.requestMethod = httpMethod
-            if (apiToken != "") {
-                connection.setRequestProperty("Authorization", "Bearer " + apiToken)
-            }
-            //connection.setRequestProperty("Accept", "application/json");
-            val Boundary = "WebBoundary"
-            val LF = "\r\n"
-            connection.setRequestProperty("Accept-encoding", "identity")
-            connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded")
-            connection.setRequestProperty("Connection", "keep-alive")
-            connection.setChunkedStreamingMode(0)
-            connection.readTimeout = 30000
-            connection.connectTimeout = 30000
-            if (httpMethod == "POST" || httpMethod == "PUT") {
-                payload = payloadAsString
-                connection.setRequestProperty("Content-Length", "" + payload.length)
-                /*payload = "--"+Boundary+LF+"Content-Disposition: form-data; name=\"cos\""+LF
-                    +"nićątko"+LF+"--"+Boundary+LF+"Content-Disposition: form-data; nasme=\"email\""
-                    +LF+"kurwawafel@prl"+LF+"--"+Boundary+"--";*/connection.doInput = true
-                connection.doOutput = true
-                try {
-                    val outputStream: OutputStream =
-                        BufferedOutputStream(connection.outputStream)
-                    val writer =
-                        BufferedWriter(OutputStreamWriter(outputStream, "UTF-8"))
-                    writer.write(payload)
-                    writer.flush()
-                    writer.close()
-                    outputStream.close()
-                    headerFields = connection.headerFields
-                    val reader =
-                        BufferedReader(InputStreamReader(connection.inputStream))
-                    while (reader.readLine().also { line = it } != null) {
-                        outputStringBuilder.append(line)
-                    }
-                } catch (ex: Exception) {
-                    ex.printStackTrace()
-                }
-                connection.disconnect()
-            } else {
-                val content =
-                    connection.inputStream as InputStream
-                headerFields = connection.headerFields
-                val reader =
-                    BufferedReader(InputStreamReader(content))
-                while (reader.readLine().also { line = it } != null) {
-                    outputStringBuilder.append(line)
-                }
-            }
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-        if (outputStringBuilder.toString() != "") {
-            lastResponse = outputStringBuilder.toString()
-        }
-        return outputStringBuilder.toString()
-    }
 
     init {
         setBaseUrl(baseUrl)
-        this.username = username
+        this.username = login
         this.password = password
         urlResource = ""
         apiToken = ""

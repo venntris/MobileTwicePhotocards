@@ -1,10 +1,8 @@
 package com.example.twicephotocards
 
-import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+//import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_wszystkie.*
+import androidx.appcompat.app.AppCompatActivity
 
 class albumy : AppCompatActivity() {
 
